@@ -297,9 +297,11 @@ function ScanFeedback({ result, onDismiss }) {
   );
 }
 
-// ===== SCAN INPUT BOX =====
-// תומך גם בסורק חיצוני (HID/Enter) וגם בהקלדה ידנית
-function ScanInput({ onScan, placeholder = "סרוק ברקוד או הקלד ולחץ Enter...", autoFocus = true }) {
-  const [val, setVal] = useState("");
-  const ref = useRef(null);
-  useEffect(() => { if (autoFocus) ref.current?.fo
+// ===== CAMERA SCANNER (inline – no external file needed) =====
+function CameraScanner({ onScan, onClose }) {
+  const videoRef = useRef(null);
+  const canvasRef = useRef(null);
+  const streamRef = useRef(null);
+  const animRef = useRef(null);
+  const lastCode = useRef("");
+  const lastTime = useRef
