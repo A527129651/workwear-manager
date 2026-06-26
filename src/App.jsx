@@ -313,7 +313,7 @@ const STATUS_COLORS = {
   "אבוד":         { bg: "#FFEBEE", text: "#B71C1C", dot: "#F44336" },
   "הושמד":        { bg: "#ECEFF1", text: "#37474F", dot: "#90A4AE" },
 };
-const CLOTHING_TYPES = ["חולצה", "מכנס", "מעיל", "כובע", "נעליים", "חגורה"];
+const CLOTHING_TYPES = ["חולצה", "מכנס", "נעליים",];
 
 const USERS = [
   { id: "editor", username: "admin", password: process.env.REACT_APP_ADMIN_PASS || "change_me", name: "אחראי המערכת", role: "editor" },
