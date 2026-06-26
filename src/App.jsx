@@ -1657,3 +1657,42 @@ const tableWrap = { background: "white", borderRadius: 12, overflow: "hidden", b
 const card = { background: "white", borderRadius: 12, padding: 22, boxShadow: "0 1px 3px rgba(0,0,0,0.06)", border: "1px solid #F3F4F6" };
 const cardTitle = { margin: "0 0 14px", fontSize: 15, fontWeight: 700, color: "#111827", display: "flex", alignItems: "center", gap: 7 };
 const codePill = { fontFamily: "monospace", fontSize: 12, background: "#F3F4F6", padding: "2px 7px", borderRadius: 4 };
+// פונקציה חכמה שמייצרת את 400 הפריטים אוטומטית כדי לשמור על קוד נקי
+const generateInitialClothes = () => {
+  const clothes = [];
+  const sizes = ["S", "M", "L", "XL", "XXL"];
+  let idCounter = 1;
+
+  // יצירת 200 חולצות (40 מכל מידה)
+  sizes.forEach(size => {
+    for (let i = 1; i <= 40; i++) {
+      clothes.push({
+        id: idCounter++,
+        barcode: `${size}${String(i).padStart(3, '0')}`,
+        type: "חולצה",
+        size: size,
+        color: "כחול",
+        purchaseDate: "2025-01-01",
+        washCount: 0,
+        status: "במלאי",
+        assignedTo: null
+      });
+    }
+  });
+
+  // יצירת 200 מכנסיים (40 מכל מידה)
+  sizes.forEach(size => {
+    for (let i = 1; i <= 40; i++) {
+      clothes.push({
+        id: idCounter++,
+        barcode: `P-${size}${String(i).padStart(3, '0')}`,
+        type: "מכנס",
+        size: size,
+        color: "כחול כהה",
+        purchaseDate: "2025-01-01",
+        washCount: 0,
+        status: "במלאי",
+        assignedTo: null
+      });
+    }
+  });
