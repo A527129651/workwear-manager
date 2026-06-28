@@ -1020,7 +1020,7 @@ function EmployeesPage({ employees, setEmployees, clothes, transactions, nextId,
             status: "active"
           })).filter(e => e.name);
           setEmployees(prev => [...prev, ...newEmps]);
-          addAudit("ייבוא עובדים מאקסל", `${newEmps.length} עובדים`, currentUser.id);
+          addAudit("ייבוא עובדים מאקסל", newEmps.length + " עובדים", currentUser.id);
         }} label="ייבוא עובדים מאקסל" />}
       </div>
 
@@ -1054,8 +1054,6 @@ function EmployeesPage({ employees, setEmployees, clothes, transactions, nextId,
         </table>
         {filtered.length === 0 && <Empty text="לא נמצאו עובדים" />}
       </div>
-    </div>
-      )}
     </div>
   );
 }
